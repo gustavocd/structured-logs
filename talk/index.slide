@@ -1,0 +1,42 @@
+Structured Logging con slog
+28 July 2023
+
+Gustavo Castillo
+@gucadiaz
+gcdcoder@gmail.com
+
+* ¿Qué es el structured logging?
+
+Se refiere al proceso de generar registros en un formato bien definido (típicamente JSON) el cuál añade un nivel de organización y consistencia haciendo que sean más fáciles de procesar.
+
+* ¿Qué información debe contener un registro?
+
+- Nivel de severidad (`INFO`, `ERROR`, `WARNING`)
+- Timestamp
+- ID del usuario
+- ID de la petición
+- Cualquier otra información que resulte relevante
+
+* ¿Cómo se implementa actualmente?
+
+.play ../std-log/main.go /^//START/,/^//END/ HL12
+
+* Desventajas
+
+- Falta del registros por nivel
+- No tiene soporte para `structured logging`
+- Configuración limitada
+- Es difícil mantener la consistencia en el formato de los registros
+
+* Arquitectura
+
+- *Logger:* este es el “Frontend” para los registros producidos con `slog`. Provee los métodos de nivel `Info()` y `Error()`.
+- *Record:* representa cada registro auto-contenido creado por un Logger.
+- *Handler:* este es el “Backend” del paquete `slog`. Es una interface que una vez implementada, determina el formato y destino de cada registro. Incluye dos handlers:
+
+  TextHandler
+  JSONHandler
+
+* ¿Cómo se implementa slog?
+
+.play ../std-slog/main.go /^//START/,/^//END/ HL12

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"golang.org/x/exp/slog"
+	"log/slog"
 )
 
 func main() {

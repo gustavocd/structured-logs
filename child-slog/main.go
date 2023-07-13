@@ -4,7 +4,7 @@ import (
 	"os"
 	"runtime/debug"
 
-	"golang.org/x/exp/slog"
+	"log/slog"
 )
 
 func main() {

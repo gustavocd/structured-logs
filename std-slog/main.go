@@ -1,7 +1,8 @@
 package main
 
+// START OMIT
 import (
-	"golang.org/x/exp/slog"
+	"log/slog" // HL12
 )
 
 func main() {
@@ -10,3 +11,5 @@ func main() {
 	slog.Warn("Warning message example")
 	slog.Error("Error message example")
 }
+
+// END OMIT

@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// START OMIT
 func main() {
 	defaultLogger := log.Default()
 	defaultLogger.SetOutput(os.Stdout)
@@ -19,3 +20,5 @@ func main() {
 	logger.Println("Hello from the custom logger!")
 	logger.Printf("username=%s user_id=%s request_id:%s", "John Doe", "123", "abc123")
 }
+
+// END OMIT
