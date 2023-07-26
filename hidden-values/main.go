@@ -18,12 +18,12 @@ type User struct {
 // 	return slog.StringValue(u.ID)
 // }
 
-func (u *User) LogValue() slog.Value {
-	return slog.GroupValue(
-		slog.String("id", u.ID),
-		slog.String("name", u.FirstName+" "+u.LastName),
-	)
-}
+// func (u *User) LogValue() slog.Value {
+// 	return slog.GroupValue(
+// 		slog.String("id", u.ID),
+// 		slog.String("name", u.FirstName+" "+u.LastName),
+// 	)
+// }
 
 func main() {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))

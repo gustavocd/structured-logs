@@ -1,11 +1,11 @@
 package main
 
+// START OMIT
 import (
-	"log"
+	"log" // HL5
 	"os"
 )
 
-// START OMIT
 func main() {
 	defaultLogger := log.Default()
 	defaultLogger.SetOutput(os.Stdout)
